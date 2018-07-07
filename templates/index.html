@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+<!-- My CSS -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+
+<title>Robot</title>
+</head>
+<body>
+
+<div class="container text-center">
+        <h1>Control Manual</h1>
+        <br>
+        <div class="row">
+                <div class="col-sm-12">
+                        <button id="adelante" class="btn btn-primary">Adelante</button>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-6">
+                        <button id="izquierda" class="btn btn-primary">Izquierda</button>
+                </div>
+                <div class="col-sm-6">
+                        <button id="derecha" class="btn btn-primary">Derecha</button>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-12">
+                        <button id="atras" class="btn btn-primary">Atras</button>
+                </div>
+        </div>
+        
+</div>
+
+
+<!-- jQuery library -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<!-- Popper JS -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<!-- Latest compiled JavaScript -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<script>
+		
+$(function(){
+var isTouchDevice = "ontouchstart" in document.documentElement ? true : false;
+var BUTTON_DOWN   = isTouchDevice ? "touchstart" : "mousedown";
+var BUTTON_UP     = isTouchDevice ? "touchend"   : "mouseup";
+			
+$("button").bind(BUTTON_DOWN,function(){
+        $.post("/control",
+        {boton: this.id},
+        function(data,status){
+          });
+        });
+
+        $("button").bind(BUTTON_UP,function(){
+        $.post("/control",
+        {boton: "alto"},
+        function(data,status){
+          });
+        });
+});
+
+
+		
+    </script>
+</body>
+</html>
