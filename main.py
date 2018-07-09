@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/robot.html")
+def robotP():
+    return render_template('robot.html')
+
 @app.route('/control', methods=['POST'])
 def command():
     if request.method == 'POST':       
