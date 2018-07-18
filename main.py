@@ -8,8 +8,12 @@ def index():
     return render_template('index.html')
 
 @app.route("/robot.html")
-def robotP():
+def robot():
     return render_template('robot.html')
+
+@app.route("/manual.html")
+def manual():
+    return render_template('manual.html')
 
 @app.route('/control', methods=['POST'])
 def command():

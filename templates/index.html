@@ -5,36 +5,67 @@
 <!-- Latest compiled and minified CSS -->
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
 <!-- My CSS -->
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
 
 <title>Robot</title>
 </head>
-<body>
+<body class="myBackground">
 
-<div class="container text-center">
-        <h1>Control Manual</h1>
-        <br>
-        <div class="row">
+        <div class="row text-center">
                 <div class="col-sm-12">
-                        <button id="adelante" class="btn btn-primary">Adelante</button>
+<<<<<<< HEAD
+                        <h1 style="color: white;">Control Manual</h1>
+=======
+                        <h1 style="color: white;">App</h1>
+>>>>>>> 3c86e55f2c4436cd8127c79192dcf06b4902e860
+                        <hr style="color: white">
                 </div>
         </div>
         <div class="row">
-                <div class="col-sm-6">
-                        <button id="izquierda" class="btn btn-primary">Izquierda</button>
+                <div class="col-sm-3  text-center sideContainer" style="height: 100%;">
+                    <div class="row">
+                        <div class="col-sm-12 sideElement">
+                                <button id="adelante" class="btn btn-primary">Opcion 1</button>
+                        </div>
+                        <div class="col-sm-12 sideElement">
+                                <button id="izquierda" class="btn btn-primary">Opcion 2</button>
+                        </div>
+                        <div class="col-sm-12 sideElement">
+                                <button id="derecha" class="btn btn-primary">Opcion 3</button>
+                        </div>
+                        <div class="col-sm-12 sideElement">
+                                <button id="atras" class="btn btn-primary">Opcion 4</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                        <button id="derecha" class="btn btn-primary">Derecha</button>
+                <div class="col-sm-6 text-center" >
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                    <h1 style="color: white; background-color: rgb(177, 222, 228, 0.3);">Hola, en que puedo ayudarte?</h1>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-sm-3  text-center sideContainer" style="height: 100%;">
+                        <div class="row">
+                            <div class="col-sm-12 sideElement">
+                                    <button id="adelante " class="btn btn-primary">Opcion 5</button>
+                            </div>
+                            <div class="col-sm-12 sideElement">
+                                    <button id="izquierda" class="btn btn-primary">Opcion 6</button>
+                            </div>
+                            <div class="col-sm-12 sideElement">
+                                    <button id="derecha" class="btn btn-primary">Opcion 7</button>
+                            </div>
+                            <div class="col-sm-12 sideElement">
+                                    <button id="atras" class="btn btn-primary">Opcion 8</button>
+                            </div>
+                        </div>
                 </div>
         </div>
-        <div class="row">
-                <div class="col-sm-12">
-                        <button id="atras" class="btn btn-primary">Atras</button>
-                </div>
-        </div>
+
         
         
-</div>
 
 
 <!-- jQuery library -->
