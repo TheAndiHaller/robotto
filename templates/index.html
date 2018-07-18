@@ -13,11 +13,7 @@
 
         <div class="row text-center">
                 <div class="col-sm-12">
-<<<<<<< HEAD
-                        <h1 style="color: white;">Control Manual</h1>
-=======
                         <h1 style="color: white;">App</h1>
->>>>>>> 3c86e55f2c4436cd8127c79192dcf06b4902e860
                         <hr style="color: white">
                 </div>
         </div>
@@ -74,31 +70,10 @@
 <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
 <!-- Latest compiled JavaScript -->
 <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-
-<script>
-		
-$(function(){
-var isTouchDevice = "ontouchstart" in document.documentElement ? true : false;
-var BUTTON_DOWN   = isTouchDevice ? "touchstart" : "mousedown";
-var BUTTON_UP     = isTouchDevice ? "touchend"   : "mouseup";
-			
-$("button").bind(BUTTON_DOWN,function(){
-        $.post("/control",
-        {boton: this.id},
-        function(data,status){
-          });
-        });
-
-        $("button").bind(BUTTON_UP,function(){
-        $.post("/control",
-        {boton: "alto"},
-        function(data,status){
-          });
-        });
-});
+<!--JavaScript propio -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 
-		
-    </script>
+
 </body>
 </html>
