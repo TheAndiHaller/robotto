@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+<!-- My CSS -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/manual.css') }}">
+
+<title>Robot</title>
+</head>
+<body class="myBackground">
+
+        <div class="row text-center">
+                <div class="col-sm-12">
+                        <h1 style="color: white;">Manual</h1>
+                        <hr style="color: white">
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-3  text-center sideContainer" style="height: 100%;">
+                    <div class="row">
+                        <div class="col-sm-12 sideElement">
+                                <button id="adelante" class="btn btn-primary">Opcion 1</button>
+                        </div>
+                        <div class="col-sm-12 sideElement">
+                                <button id="izquierda" class="btn btn-primary">Opcion 2</button>
+                        </div>
+                        <div class="col-sm-12 sideElement">
+                                <button id="derecha" class="btn btn-primary">Opcion 3</button>
+                        </div>
+                        <div class="col-sm-12 sideElement">
+                                <button id="atras" class="btn btn-primary">Opcion 4</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center" >
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                    <h1 style="color: white; background-color: rgb(177, 222, 228, 0.3);">Hola, en que puedo ayudarte?</h1>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-sm-3  text-center sideContainer" style="height: 100%;">
+                        <div class="row">
+                            <div class="col-sm-12 sideElement">
+                                    <button id="adelante " class="btn btn-primary">Opcion 5</button>
+                            </div>
+                            <div class="col-sm-12 sideElement">
+                                    <button id="izquierda" class="btn btn-primary">Opcion 6</button>
+                            </div>
+                            <div class="col-sm-12 sideElement">
+                                    <button id="derecha" class="btn btn-primary">Opcion 7</button>
+                            </div>
+                            <div class="col-sm-12 sideElement">
+                                    <button id="atras" class="btn btn-primary">Opcion 8</button>
+                            </div>
+                        </div>
+                </div>
+        </div>
+
+        
+        
+
+
+<!-- jQuery library -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<!-- Popper JS -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+<!-- Latest compiled JavaScript -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<script>
+		
+$(function(){
+var isTouchDevice = "ontouchstart" in document.documentElement ? true : false;
+var BUTTON_DOWN   = isTouchDevice ? "touchstart" : "mousedown";
+var BUTTON_UP     = isTouchDevice ? "touchend"   : "mouseup";
+			
+$("button").bind(BUTTON_DOWN,function(){
+        $.post("/control",
+        {boton: this.id},
+        function(data,status){
+          });
+        });
+
+        $("button").bind(BUTTON_UP,function(){
+        $.post("/control",
+        {boton: "alto"},
+        function(data,status){
+          });
+        });
+});
+
+
+		
+    </script>
+</body>
+</html>
