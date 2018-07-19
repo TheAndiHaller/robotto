@@ -22,59 +22,52 @@
                         <div class="row">
                                 <div class="col-md-3">
                                         <!--Aca arranca el boton de fecha y hora, los anteriores divs son espacios para 
-                        llegar a los ultimos 3 espacios de la pantalla que se divide en 12
+                                        llegar a los ultimos 3 espacios de la pantalla que se divide en 12
                                         //-->
-                                        <div style="color: white;width:60%;height:20px;font-size:20px;">
-                                                <script type="text/javascript">
-                                                        //<![CDATA[
-                                                        var date = new Date();
-                                                        var d = date.getDate();
-                                                        var day = (d < 10) ? '0' + d : d;
-                                                        var m = date.getMonth() + 1;
-                                                        var month = (m < 10) ? '0' + m : m;
-                                                        var yy = date.getYear();
-                                                        var year = (yy < 1000) ? yy + 1900 : yy;
-                                                        document.write(day + "/" + month + "/" + year);
-                                                                                        //]]>
-                                                </script>
-
+                                        <div class="row">
+                                                <div class="col-sm-12">
+                                                        <div id="fecha" style="color: white;font-size:20px;"></div>
+                                                        <script type="text/javascript">
+                                                                var date = new Date();
+                                                                var d = date.getDate();
+                                                                var day = (d < 10) ? '0' + d : d;
+                                                                var m = date.getMonth() + 1;
+                                                                var month = (m < 10) ? '0' + m : m;
+                                                                var yy = date.getYear();
+                                                                var year = (yy < 1000) ? yy + 1900 : yy;
+                                                                document.getElementById('fecha').innerHTML = day + "-" + month + "-" + year;
+                                                        </script>
+                                                </div>
                                         </div>
+                                        <div class="row">
+                                                <div class="col-sm-12">
+                                                        <script type="text/javascript">
+                                                                function startTime() {
+                                                                        today = new Date();
+                                                                        h = today.getHours();
+                                                                        m = today.getMinutes();
+                                                                        s = today.getSeconds();
+                                                                        m = checkTime(m);
+                                                                        s = checkTime(s);
+                                                                        document.getElementById('reloj').innerHTML = h + ":" + m + ":" + s;
+                                                                        t = setTimeout('startTime()', 500);
+                                                                }
+                                                                function checkTime(i) { if (i < 10) { i = "0" + i; } return i; }
+                                                                window.onload = function () { startTime(); }
+                                                        </script>
+                                                        <div id="reloj" style="color: white;font-size:20px;"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                        <h1 style="color: white; background-color: rgb(177, 222, 228, 0.3);">Hola, soy Alfred ¿en que puedo ayudarte?</h1>
+                                </div>
 
-                                        <script type="text/javascript">
-                                                function startTime() {
-                                                        today = new Date();
-                                                        h = today.getHours();
-                                                        m = today.getMinutes();
-                                                        s = today.getSeconds();
-                                                        m = checkTime(m);
-                                                        s = checkTime(s);
-                                                        document.getElementById('reloj').innerHTML = h + ":" + m + ":" + s;
-                                                        t = setTimeout('startTime()', 500);
-                                                }
-                                                function checkTime(i) { if (i < 10) { i = "0" + i; } return i; }
-                                                window.onload = function () { startTime(); }
-                                        </script>
-                                        <div id="reloj" style="color: white;width:60%;height:60px;font-size:20px;"></div>
-                                        </button>
+                                <div class="col-md-3">
 
                                 </div>
-                                <div class="col-sm-12 col-md-6 text-center">
-                                        <h1 style="color: white; background-color: rgb(177, 222, 228, 0.3);">Hola humano, soy Alfred ¿En que puedo ayudarte?</h1>
-
-                                </div>
-                                <!--Este seria un posible mensaje de alerta para usar
-                                         <div class="alert alert-danger" role="alert">               
-                        Aca iria un mensaje de alerta (antes estaba help en rojo!)
-                                               //-->
                         </div>
                 </div>
-                <div class="col-md-3">
-
-                </div>
-        </div>
-        </div>
-
-
         </div>
         <div class="row">
                 <div class="col-md-3">
@@ -100,18 +93,17 @@
         </div>
         <div class="row">
                 <div class="col-md-3">
-                        <button id="adelante" class="btn btn-primary">Mapa</button>
+                        <h1 style="color:white;width:120%;height:0px;font-size:100px;text-align:center">Mapa</h1>
                 </div>
                 <div class="col-sm-12 col-md-6 sideElement">
 
                 </div>
                 <div class="col-md-3">
-                        <button id="adelante" class="btn btn-primary">Estado:
-                                <span style="color: white;width:60%;height:80px;font-size:20px;">
-                                        Alfred murio
+                        <h1 style="color:white;width:100%;height:80px;font-size:30px;">Estado de Alfred:
+                                <span style="color:green;width:60%;height:0px;font-size:15px;">
+                                        Activo
                                 </span>
-
-                        </button>
+                        </h1>
                 </div>
         </div>
         <div class="row">
@@ -124,20 +116,14 @@
                 </div>
 
                 <div class="col-md-3">
-                        <button id="adelante" class="btn btn-primary">Bateria</button>
+                        <h1 style="color:white;width:120%;height:0px;font-size:30px;">Bateria:
+                                <span style="color:red;width:60%;height:0px;font-size:20px;">
+                                        100
+                                </span>
+                        </h1>
                 </div>
         </div>
-        <div class="row">
-                <div class="col-md-3">
 
-                </div>
-                <div class="col-sm-12 col-md-6 text-center">
-                        <h1>Alfred, todos los derechos reservados :)</h1>
-                </div>
-                <div class="col-md-3 text-center">
-
-                </div>
-        </div>
 
         <!-- jQuery library -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
