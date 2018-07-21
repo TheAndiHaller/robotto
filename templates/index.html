@@ -17,7 +17,7 @@
                         <hr style="color: white">
                 </div>
         </div>
-
+        <!--/ Primera Row /-->
         <div class="row">
                 <div class="col-md-3 text-center">
                         <!--Aca arranca el boton de fecha y hora, los anteriores divs son espacios para 
@@ -67,6 +67,7 @@
                 </div>
 
         </div>
+        <!--/Segunda Row/-->
         <div class="row">
                 <div class="col-md-3">
 
@@ -78,6 +79,7 @@
 
                 </div>
         </div>
+        <!--/Tercer Row/-->
         <div class="row">
                 <div class="col-md-3">
 
@@ -89,24 +91,32 @@
 
                 </div>
         </div>
+        <!--/Cuarta Row/-->
         <div class="row">
                 <div class="col-md-3">
-                        <h1 style="color:white;width:120%;height:0px;font-size:100px;text-align:center">Mapa</h1>
+                        <div class="row">
+                                <!--/Adentro de la row cuatro va otra row para centrar lo que se describe a continuacion/-->
+                                <div class="col-sm-12 col-md-6 ivan123 text-center">
+                                        <h1>Mapa</h1>
+                                </div>
+                        </div>
+
                 </div>
                 <div class="col-sm-12 col-md-6 sideElement">
 
                 </div>
                 <div class="col-md-3">
-                        <h1 style="color:white;width:100%;height:80px;font-size:30px;">Estado de Alfred:
-                                <span style="color:green;width:60%;height:0px;font-size:15px;">
-                                        Activo
-                                </span>
-                        </h1>
+
                 </div>
         </div>
+        <!--/Quinta Row/-->
         <div class="row">
                 <div class="col-md-3">
-                        <img src="{{ url_for('static', filename='css/mapa.jpg') }}" alt="andy lpm" style="width:100%;height:200px;font-size:40px;">
+                        <div class="row">
+                                <div class="col-sm-12 col-md-6 text-center">
+                                        <img src="{{ url_for('static', filename='css/mapa.jpg') }}" alt="andy lpm" style="width:100%;height:200px;font-size:40px;">
+                                </div>
+                        </div>
 
                 </div>
                 <div class="col-sm-12 col-md-6 sideElement">
@@ -114,14 +124,34 @@
                 </div>
 
                 <div class="col-md-3">
-                        <h1 style="color:white;width:120%;height:0px;font-size:30px;">Bateria:
-                                <span style="color:red;width:60%;height:0px;font-size:20px;">
-                                        100
-                                </span>
-                        </h1>
+                        <div class="row">
+                                <div class="col-sm-12 col-md-12 ivan123">
+                                        <div class="row">
+                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                        <h2>Estado: </h2>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                        <h2>OK</h2>
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-sm-12 col-md-12 ivan123">
+                                        <div class="row">
+                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                        <h2>Bateria: </h2>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                        <h2>100</h2>
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
                 </div>
         </div>
-
 
         <!-- jQuery library -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>

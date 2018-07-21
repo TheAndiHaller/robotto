@@ -25,13 +25,13 @@ html {
   padding-top: 10px;
 
 }
-
-.ivan {
-  text-align:center; 
-  color: white;
-  width:20%;
-  height:20px;
-  font-size:40px;
+.ivan123{
+  color: white; 
+  width: 20%;
+  height: 20%;
+  font-size: 10%;
+  cursor: progress;
+  
 }
 
 
@@ -55,7 +55,6 @@ html {
   border-color: rgb(177, 222, 228, 0.4);
   cursor: pointer;
 }
-
 
 
 
