@@ -1,3 +1,4 @@
+
 $(function(){
     var isTouchDevice = "ontouchstart" in document.documentElement ? true : false;
     var BUTTON_DOWN   = isTouchDevice ? "touchstart" : "mousedown";
@@ -17,3 +18,4 @@ $(function(){
               });
             });
     });
+
