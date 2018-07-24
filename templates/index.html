@@ -73,7 +73,8 @@
 
                 </div>
                 <div class="col-sm-12 col-md-6 sideElement">
-                        <button id="adelante" class="btn btn-primary">Hacer envio</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalenvio">Hacer envio</button>
+                        <!--/ Modal para el envio en el final del codigo   /-->
                 </div>
                 <div class="col-md-3">
 
@@ -85,7 +86,8 @@
 
                 </div>
                 <div class="col-sm-12 col-md-6 sideElement">
-                        <button id="adelante" class="btn btn-primary">Hacer pedido</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalpedido">Hacer pedido</button>
+                        <!--/ Modal para el pedido en el final del codigo   /-->
                 </div>
                 <div class="col-md-3">
 
@@ -153,6 +155,76 @@
                 </div>
         </div>
 
+        <!-- Modal envio -->
+        <div class="modal fade" id="modalenvio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Envio en curso</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body">
+                                        <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        Seleccionar un elemento
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">¿A donde voy?</a>
+                                                        <a class="dropdown-item" href="#">¿A donde lo llevo?</a>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="button" id="ivanestaloco" class="btn btn-secondary">Hacer envio</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- Modal pedido -->
+        <div class="modal fade" id="modalpedido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                        <div style="background-color: rgba(0, 141, 225)" class="modal-content">
+                                <div style="background-color: rgba(0, 141, 225)" class="modal-header">
+                                        <h5 style="color:whitesmoke"class="modal-title" id="exampleModalLabel">Pedido en curso</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body">
+                                        <div class="dropdown">
+                                                <button style="color:whitesmoke; background-color:rgba(255, 140, 0)" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ¿A donde voy?
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Direccion</a>
+                                                        <a class="dropdown-item" href="#">Aula 1</a>
+                                                </div>
+                                        </div>
+                                        <div class="dropdown">
+                                                <button style="color:whitesmoke;background-color: rgba(255, 140, 0)" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">
+                                                        ¿Qué llevo?
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Estaaaa</a>
+                                                        <a class="dropdown-item" href="#">jajaja</a>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                        <button style="color:whitesmoke ; background-color: rgba(245, 0, 87)" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button style="color:whitesmoke ; background-color: rgba(125, 247, 0)" type="button" id="ivanestaloco" class="btn btn-secondary">Hacer pedido</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        
         <!-- jQuery library -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <!-- Popper JS -->
