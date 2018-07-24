@@ -6,7 +6,7 @@ html {
 
 .myBackground {
   background-position: center;
-  background-image: url("wallpaper.jpg");
+  background-image: url("bean.jpg");
   background-size: cover;
   height: 100%;
 }
@@ -43,3 +43,39 @@ html {
   cursor: pointer;
 }
 
+.imgbutton {
+  background-color: transparent;
+  border: none;
+  height: 100px;
+  width: 100px;
+}
+
+#adelante {
+  background-image: url(up-arrow.png);
+  background-size: cover;
+}
+
+#atras {
+  background-image: url(down-arrow.png);
+  background-size: cover;
+}
+
+#izquierda {
+  background-image: url(left-arrow.png);
+  background-size: cover;
+}
+
+#derecha {
+  background-image: url(right-arrow.png);
+  background-size: cover;
+}
+
+#configuracion{
+  background-image: url(gears.png);
+  background-size: cover;
+}
+
+
+button span {
+  display: none;
+}
