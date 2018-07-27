@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
@@ -120,16 +121,7 @@
                         </div>
 
                 </div>
-                 <!--/  Esto es una prueba del dropdown "trucho" /-->    
                 <div class="col-sm-12 col-md-6 sideElement">
-                        <div class="btn btn-primary">
-                                Comida:
-                                <select >
-                                        <option> comida alfred </option>
-                                        <option> comida andi </option>
-                                        <option> comida de ivan </option>
-                                </select>
-                        </div>
 
                 </div>
 
@@ -177,26 +169,17 @@
                                         </button>
                                 </div>
                                 <div class="modal-body">
-                                        <div class="dropdown">
-                                                <button style="color:whitesmoke; background-color:rgba(255, 140, 0)" class="btn btn-secondary dropdown-toggle" type="button"
-                                                        id="hacerpedidoBtn1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ¿A donde voy?
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="hacerpedidoItems1">
-                                                        <a class="dropdown-item" href="#">Direccion</a>
-                                                        <a class="dropdown-item" href="#">Aula 1</a>
-                                                </div>
-                                        </div>
-                                        <div class="dropdown">
-                                                <button style="color:whitesmoke;background-color: rgba(255, 140, 0)" class="btn btn-secondary dropdown-toggle" type="button"
-                                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ¿A donde lo llevo?
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">Aca</a>
-                                                        <a class="dropdown-item" href="#">jajaja</a>
-                                                </div>
-                                        </div>
+                                        <select class="custom-select" style="color:whitesmoke; background-color:rgba(255, 140, 0)">
+                                                <option selected>---¿A donde voy?---</option>
+                                                <option> Direccion</option>
+                                                <option> Aula 1 </option>
+                                                <option> A la concha de tu madre </option>
+                                        </select>
+                                        <select class="custom-select" style="color:whitesmoke; background-color:rgba(255, 140, 0)">
+                                                <option selected> ---¿A donde lo llevo?---</option>
+                                                <option> A la concha de tu madre </option>
+                                                <option> lol </option>
+                                        </select>
                                 </div>
                                 <div class="modal-footer">
                                         <button style="color:whitesmoke ; background-color: rgba(245, 0, 87)" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -218,42 +201,34 @@
                                 </div>
                                 <div class="modal-body">
                                         <div class="dropdown">
-                                                <button style="color:whitesmoke; background-color:rgba(255, 140, 0)" class="btn btn-secondary dropdown-toggle" type="button"
-                                                        id="hacerpedidoBtn1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ¿A donde voy?
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="hacerpedidoItems1">
-                                                        <a class="dropdown-item" href="#">Direccion</a>
-                                                        <a class="dropdown-item" href="#">Aula 1</a>
-                                                </div>
+                                                <select class="custom-select" style="color:whitesmoke; background-color:rgba(255, 140, 0)">
+                                                        <option selected>---¿A donde voy?---</option>
+                                                        <option> Direccion</option>
+                                                        <option> Aula 1 </option>
+                                                        <option> A la concha de tu madre </option>
+                                                </select>
+                                                <select class="custom-select" style="color:whitesmoke; background-color:rgba(255, 140, 0)">
+                                                        <option selected> ---¿Que llevo?---</option>
+                                                        <option> Esta </option>
+                                                        <option> lol </option>
+                                                </select>
                                         </div>
-                                        <div class="dropdown">
-                                                <button style="color:whitesmoke;background-color: rgba(255, 140, 0)" class="btn btn-secondary dropdown-toggle" type="button"
-                                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        ¿Qué llevo?
-                                                </button>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">nose</a>
-                                                        <a class="dropdown-item" href="#">jajaja</a>
-                                                </div>
+                                        <div class="modal-footer">
+                                                <button style="color:whitesmoke ; background-color: rgba(245, 0, 87)" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button style="color:whitesmoke ; background-color: rgba(125, 247, 0)" type="button" id="ivanestaloco" class="btn btn-secondary">Hacer pedido</button>
                                         </div>
-                                </div>
-                                <div class="modal-footer">
-                                        <button style="color:whitesmoke ; background-color: rgba(245, 0, 87)" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        <button style="color:whitesmoke ; background-color: rgba(125, 247, 0)" type="button" id="ivanestaloco" class="btn btn-secondary">Hacer pedido</button>
                                 </div>
                         </div>
                 </div>
-        </div>
 
-        <!-- jQuery library -->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-        <!-- Popper JS -->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
-        <!-- Latest compiled JavaScript -->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-        <!--JavaScript propio -->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+                <!-- jQuery library -->
+                <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+                <!-- Popper JS -->
+                <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+                <!-- Latest compiled JavaScript -->
+                <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+                <!--JavaScript propio -->
+                <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 
 
