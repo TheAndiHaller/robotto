@@ -2,6 +2,10 @@
 <html>
 
 <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
         <!-- My CSS -->
@@ -13,139 +17,89 @@
 <body class="myBackground">
         <!-- aca haccemos la linea blanca del principio//-->
         <div class="row text-center">
-                <div class="col-sm-12">
+                <div class="col-12">
                         <hr style="color: white">
                 </div>
         </div>
         <!--/ Primera Row /-->
         <div class="row">
-                <div class="col-md-3 text-center">
-                        <!--Aca arranca el boton de fecha y hora, los anteriores divs son espacios para 
-                                        llegar a los ultimos 3 espacios de la pantalla que se divide en 12
-                                        //-->
-                        <div class="row">
-                                <div class="col-sm-12">
-                                        <div id="fecha" style="color: white;font-size:20px;"></div>
-                                        <script type="text/javascript">
-                                                var date = new Date();
-                                                var d = date.getDate();
-                                                var day = (d < 10) ? '0' + d : d;
-                                                var m = date.getMonth() + 1;
-                                                var month = (m < 10) ? '0' + m : m;
-                                                var yy = date.getYear();
-                                                var year = (yy < 1000) ? yy + 1900 : yy;
-                                                document.getElementById('fecha').innerHTML = day + "-" + month + "-" + year;
-                                        </script>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-sm-12">
-                                        <script type="text/javascript">
-                                                function startTime() {
-                                                        today = new Date();
-                                                        h = today.getHours();
-                                                        m = today.getMinutes();
-                                                        s = today.getSeconds();
-                                                        m = checkTime(m);
-                                                        s = checkTime(s);
-                                                        document.getElementById('reloj').innerHTML = h + ":" + m + ":" + s;
-                                                        t = setTimeout('startTime()', 500);
-                                                }
-                                                function checkTime(i) { if (i < 10) { i = "0" + i; } return i; }
-                                                window.onload = function () { startTime(); }
-                                        </script>
-                                        <div id="reloj" style="color: white;font-size:20px;"></div>
-                                </div>
-                        </div>
+                <div class="col-12 col-md-3">
+
                 </div>
-                <div class="col-sm-12 col-md-6 text-center">
+                <div class="col-12 col-md-6 text-center">
                         <h1 style="color: white; background-color: rgb(177, 222, 228, 0.3);">Hola, soy Alfred ¿En que puedo ayudarte?</h1>
                 </div>
-
-                <div class="col-md-3">
+                <div class="col-12 col-md-3">
 
                 </div>
-
         </div>
         <!--/Segunda Row/-->
         <div class="row">
-                <div class="col-md-3">
+                <div class="col-12 col-md-3">
 
                 </div>
-                <div class="col-sm-12 col-md-6 sideElement">
+                <div class="col-12 col-md-6 sideElement">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalenvio">Hacer envio</button>
                         <!--/ Modal para el envio en el final del codigo   /-->
                 </div>
-                <div class="col-md-3">
+                <div class="col-12 col-md-3">
 
                 </div>
         </div>
         <!--/Tercer Row/-->
         <div class="row">
-                <div class="col-md-3">
+                <div class="col-12 col-md-3">
 
                 </div>
-                <div class="col-sm-12 col-md-6 sideElement">
+                <div class="col-12 col-md-6 sideElement">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalpedido">Hacer pedido</button>
                         <!--/ Modal para el pedido en el final del codigo   /-->
                 </div>
-                <div class="col-md-3">
+                <div class="col-12 col-md-3">
 
                 </div>
         </div>
         <!--/Cuarta Row/-->
         <div class="row">
-                <div class="col-md-3">
-                        <div class="row">
-                                <!--/Adentro de la row cuatro va otra row para centrar lo que se describe a continuacion/-->
-                                <div class="col-sm-12 col-md-6 ivan123 text-center">
-                                        <h1>Borrar?</h1>
-                                </div>
-                        </div>
+                <div class="col-12 col-md-3">
 
                 </div>
-                <div class="col-sm-12 col-md-6 sideElement">
+                <div class="col-12 col-md-6 sideElement">
 
                 </div>
-                <div class="col-md-3">
+                <div class="col-12 col-md-3">
 
                 </div>
         </div>
         <!--/Quinta Row/-->
         <div class="row">
-                <div class="col-md-3">
-                        <div class="row">
-                                <div class="col-sm-12 col-md-6 text-center">
-                                        <img src="{{ url_for('static', filename='css/mapa.jpg') }}" alt="andy lpm" style="width:100%;height:200px;font-size:40px;">
-                                </div>
-                        </div>
+                <div class="col-12 col-md-3">
 
                 </div>
-                <div class="col-sm-12 col-md-6 sideElement">
+                <div class="col-12 col-md-6">
 
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-12 col-md-3">
                         <div class="row">
-                                <div class="col-sm-12 col-md-12 ivan123">
+                                <div class="col-12 col-md-12 ivan123">
                                         <div class="row">
-                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                <div class="col-6 col-md-6 ivan123 text-center">
                                                         <h2>Estado: </h2>
                                                 </div>
-                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                <div class="col-6 col-md-6 ivan123 text-center">
                                                         <h2>OK</h2>
                                                 </div>
                                         </div>
-
                                 </div>
                         </div>
                         <div class="row">
-                                <div class="col-sm-12 col-md-12 ivan123">
+                                <div class="col-12 col-md-12 ivan123">
                                         <div class="row">
-                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                <div class="col-6 col-md-6 ivan123 text-center">
                                                         <h2>Bateria: </h2>
                                                 </div>
-                                                <div class="col-sm-12 col-md-6 ivan123">
+                                                <div class="col-6 col-md-6 ivan123 text-center">
                                                         <div class="progress" style="height: 40px;">
                                                                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width:75%" aria-valuenow="75"
                                                                         aria-valuemin="0" aria-valuemax="100">75%</div>
@@ -220,15 +174,15 @@
                                 </div>
                         </div>
                 </div>
-
-                <!-- jQuery library -->
-                <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-                <!-- Popper JS -->
-                <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
-                <!-- Latest compiled JavaScript -->
-                <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-                <!--JavaScript propio -->
-                <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+        </div>
+        <!-- jQuery library -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <!-- Popper JS -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+        <!-- Latest compiled JavaScript -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <!--JavaScript propio -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 
 
