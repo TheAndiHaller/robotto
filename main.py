@@ -32,5 +32,17 @@ def command():
             print(request.form.get("boton"))
     return "OK"        
 
+@app.route('/robot', methods=['POST'])
+def commandrobot():
+    if request.method == 'POST':       
+        if request.form.get("boton2") == "abrir":
+            print("abrir")
+        elif request.form.get("boton2") == "cerrar":
+            print("cerrar")
+        else:
+            print("Comando incorrecto!")
+            print(request.form.get("boton2"))
+    return "OK"   
+
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000)

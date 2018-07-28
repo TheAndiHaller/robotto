@@ -32,16 +32,11 @@ $(function(){
     var BUTTON_UP     = isTouchDevice ? "touchend"   : "mouseup";
                 
     $("button").bind(BUTTON_DOWN,function(){
-            $.post("/control",
-            {boton: this.id},
+            $.post("/robot",
+            {boton2: this.id},
             function(data,status){
               });
             });
     
-            $("button").bind(BUTTON_UP,function(){
-            $.post("/control",
-            {boton: "alto"},
-            function(data,status){
-              });
-            });
+
     });
