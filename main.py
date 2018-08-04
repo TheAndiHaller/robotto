@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import serial
-ser = serial.Serial('ttyACM0', 115200, timeout=0)  # open serial port Windows
+ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)  # open serial port Windows
 
 app = Flask(__name__)
 
