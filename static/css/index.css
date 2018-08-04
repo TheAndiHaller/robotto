@@ -4,7 +4,7 @@ html {
   height: 100%; 
 }
 
-/* Aca empieza el css del robotito que flota (tener encuenta que el robot toma el height 100% del body */
+/* Aca empieza el css del robotito que flota (tener encuenta que el robot toma el height 100% del body) */
 body {
   background: url(http://zmwlt.com/bucket/cz-20150128-what-color-2-bg.jpg) center center / 70%;
   position: relative;
@@ -14,8 +14,8 @@ body {
   top: 80%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  max-width: 30vw;
-  max-height: 60vh;
+  max-width: 20vw;
+  max-height: 40vh;
   margin: 0 auto;
 }
 #body {

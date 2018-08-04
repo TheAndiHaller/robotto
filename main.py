@@ -17,7 +17,7 @@ def manual():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    # note that we set the 404 status explicitly
+    # Tenemos en cuenta que establecemos el estado explicito de 404
     return render_template('error.html'), 404
 
 @app.route('/control', methods=['POST'])
@@ -39,7 +39,7 @@ def command():
     return "OK"        
 
 if __name__ == "__main__":
-    app.run(host='10.0.1.67', port=5000)
+    app.run(host='127.0.0.1', port=5000)
 
 
 #127.0.0.1 (ip home)
