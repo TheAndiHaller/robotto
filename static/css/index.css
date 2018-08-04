@@ -93,7 +93,7 @@ body {
 }
 /* Aca empieza el css del preloader */
 .loader {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
