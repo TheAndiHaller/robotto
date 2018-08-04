@@ -69,7 +69,8 @@ $(function(){
 var isTouchDevice = "ontouchstart" in document.documentElement ? true : false;
 var BUTTON_DOWN   = isTouchDevice ? "touchstart" : "mousedown";
 var BUTTON_UP     = isTouchDevice ? "touchend"   : "mouseup";
-			
+var MOUSE_LEAVE   = "mouseleave";
+
 $("button").bind(BUTTON_DOWN,function(){
         $.post("/control",
         {boton: this.id},
@@ -83,6 +84,14 @@ $("button").bind(BUTTON_DOWN,function(){
         function(data,status){
           });
         });
+
+        $("button").bind(MOUSE_LEAVE,function(){
+        $.post("/control",
+        {boton: "alto"},
+        function(data,status){
+          });
+        });
+        
 });
 
 
