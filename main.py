@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import serial
-ser = serial.Serial('COM26', 115200, timeout=0)  # open serial port Windows
+ser = serial.Serial('ttyACM0', 115200, timeout=0)  # open serial port Windows
 
 app = Flask(__name__)
 
@@ -34,7 +34,7 @@ def command():
         elif request.form.get("boton") == "alto":
             print("alto")
             ser.write(b's \n')     # write a string
-        else:
+        else:   
             print("Comando incorrecto!")
             print(request.form.get("boton"))
     return "OK"        
