@@ -63,6 +63,7 @@ void loop() {
     digitalWrite(led, LOW);
     digitalWrite(led2, LOW);
     delay(1000);
+    comando = 'x';
     break;
   }
 }
