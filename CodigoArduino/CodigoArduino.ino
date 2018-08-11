@@ -12,9 +12,10 @@ void loop() {
   
   while (Serial.available()) {
     c = Serial.read();
-    if (c == '\n' || c == '\r' || c == '$') {
+    if (c == 'f' || c == 'b' || c == 'l' || c == 'r' || c == 's') {
+       comando = c;
     } else {
-      comando = c;
+     
     }
   }
 
