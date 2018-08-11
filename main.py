@@ -1,5 +1,6 @@
-from flask import Flask, request
-from flask import render_template
+from flask import Flask, render_template, request
+import serial
+ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)  # open serial port Windows
 
 app = Flask(__name__)
 
@@ -25,21 +26,44 @@ def command():
     if request.method == 'POST':       
         if request.form.get("boton") == "adelante":
             print("adelante")
+            ser.write(b'f \n')     # write a string
         elif request.form.get("boton") == "atras":
             print("atras")
+            ser.write(b'b \n')     # write a string
         elif request.form.get("boton") == "izquierda":
             print("izquierda")
+            ser.write(b'l \n')     # write a string
         elif request.form.get("boton") == "derecha":
             print("derecha")
+            ser.write(b'r \n')     # write a string
         elif request.form.get("boton") == "alto":
             print("alto")
-        else:
+            ser.write(b's \n')     # write a string
+        else:   
             print("Comando incorrecto!")
             print(request.form.get("boton"))
     return "OK"        
 
+@app.route('/robot', methods=['POST'])
+def commandrobot():
+    if request.method == 'POST':       
+        if request.form.get("boton2") == "abrir":
+            print("abrir")
+            ser.write(b'abrir \n')     # write a string
+        elif request.form.get("boton2") == "cerrar":
+            print("cerrar")
+            ser.write(b'cerrar \n')     # write a string
+        else:
+            print("Comando incorrecto!")
+            print(request.form.get("boton2"))
+    return "OK"   
+
 if __name__ == "__main__":
+<<<<<<< HEAD
     app.run(host='127.0.0.1', port=5000)
 
 
 #127.0.0.1 (ip home)
+=======
+    app.run(host='172.16.0.114', port=5000)
+>>>>>>> agustin
