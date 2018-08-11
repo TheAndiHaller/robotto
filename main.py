@@ -59,16 +59,13 @@ def commandrobot():
     return "OK"   
 
 if __name__ == "__main__":
-    app.run(host='172.16.0.239', port=5000)
+    app.run(host='172.16.0.114', port=5000)
 
 
 #127.0.0.1 (ip home)
-<<<<<<< HEAD
-=======
 #172.16.0.114 (raspy)
 #id: pi
 #password: raspberry
 #cd robotto/
 #git pull origin master (actualizar)
 #ls 
->>>>>>> Ivan-volvio-a-ser-un-capo
