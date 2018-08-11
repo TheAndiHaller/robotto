@@ -1,5 +1,7 @@
 const int led = 8;
 const int led2 = 9;
+char c;
+char comando;
 
 void setup() {
   Serial.begin(115200);
@@ -7,17 +9,16 @@ void setup() {
   pinMode(led2, OUTPUT);
 }
 void loop() {
+  
   while (Serial.available()) {
-    char c = Serial.read();
+    c = Serial.read();
     if (c == '\n' || c == '\r' || c == '$') {
     } else {
-      control(c);
+      comando = c;
     }
   }
-}
 
-void control(char comando) {
-  switch (comando) {
+    switch (comando) {
     case 'f': // si verde titila 2 veces es f
       digitalWrite(led, HIGH);
       delay(500);
@@ -63,10 +64,11 @@ void control(char comando) {
     delay(1000);
     break;
   }
-
-
-
-
 }
+
+
+
+
+
 
 
