@@ -59,7 +59,11 @@ def commandrobot():
     return "OK"   
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+    app.run(host='0.0.0.0', port=5000)
+=======
     app.run(host='127.0.0.1', port=5000)
+>>>>>>> Ivan-volvio-a-ser-un-capo
 
 
 #127.0.0.1 (ip home)
