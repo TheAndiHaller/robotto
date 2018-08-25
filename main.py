@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request
 import serial
-ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)  # open serial port Windows
+try:
+	ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)
+except ValueError:
+	print("Error al abrir el puerto serrial con el arduino. Verificar que el arduino este conectado a la raspi!!!")
 
 app = Flask(__name__)
 
