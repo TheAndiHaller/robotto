@@ -31,31 +31,31 @@ def command():
             print("adelante")
             try:
 	            ser.write(b'f \n')     # write a string 
-            except serial.SerialException:
+            except Exception:
 	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "atras":
             print("atras")
             try:
 	            ser.write(b'b \n')     # write a string 
-            except serial.SerialException:
+            except Exception:
 	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "izquierda":
             print("izquierda")
             try:
 	            ser.write(b'l \n')     # write a string 
-            except serial.SerialException:
+            except Exception:
 	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "derecha":
             print("derecha")
             try:
 	            ser.write(b'r \n')     # write a string 
-            except serial.SerialException:
+            except Exception:
 	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "alto":
             print("alto")
             try:
 	            ser.write(b's \n')     # write a string 
-            except serial.SerialException:
+            except Exception:
 	            print("Error al enviar comando al arduino!!!")
         else:   
             print("Comando incorrecto!")
@@ -69,13 +69,13 @@ def commandrobot():
             print("abrir")
             try:
 	            ser.write(b'abrir \n')     # write a string 
-            except serial.SerialException:
+            except Exception:
 	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton2") == "cerrar":
             print("cerrar")
             try:
 	            ser.write(b'cerrar \n')     # write a string 
-            except serial.SerialException:
+            except Exception:
 	            print("Error al enviar comando al arduino!!!")
         else:
             print("Comando incorrecto!")
