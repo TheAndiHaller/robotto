@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import serial
-ser = serial.Serial('/dev/ttyAMA0', 115200, timeout=0)  # open serial port Windows
+ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)  # open serial port Windows
 
 app = Flask(__name__)
 
@@ -59,7 +59,7 @@ def commandrobot():
     return "OK"   
 
 if __name__ == "__main__":
-    app.run(host='192.168.0.101', port=5000)
+    app.run(host='0.0.0.0', port=5000)
 
 
 #127.0.0.1 (ip home)
