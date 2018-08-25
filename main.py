@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import serial
 try:
 	ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)
-except ValueError:
+except IOError:
 	print("Error al abrir el puerto serrial con el arduino. Verificar que el arduino este conectado a la raspi!!!")
 
 app = Flask(__name__)
@@ -29,19 +29,34 @@ def command():
     if request.method == 'POST':       
         if request.form.get("boton") == "adelante":
             print("adelante")
-            ser.write(b'f \n')     # write a string
+            try:
+	            ser.write(b'f \n')     # write a string 
+            except serial.SerialException:
+	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "atras":
             print("atras")
-            ser.write(b'b \n')     # write a string
+            try:
+	            ser.write(b'b \n')     # write a string 
+            except serial.SerialException:
+	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "izquierda":
             print("izquierda")
-            ser.write(b'l \n')     # write a string
+            try:
+	            ser.write(b'l \n')     # write a string 
+            except serial.SerialException:
+	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "derecha":
             print("derecha")
-            ser.write(b'r \n')     # write a string
+            try:
+	            ser.write(b'r \n')     # write a string 
+            except serial.SerialException:
+	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton") == "alto":
             print("alto")
-            ser.write(b's \n')     # write a string
+            try:
+	            ser.write(b's \n')     # write a string 
+            except serial.SerialException:
+	            print("Error al enviar comando al arduino!!!")
         else:   
             print("Comando incorrecto!")
             print(request.form.get("boton"))
@@ -52,10 +67,16 @@ def commandrobot():
     if request.method == 'POST':       
         if request.form.get("boton2") == "abrir":
             print("abrir")
-            ser.write(b'abrir \n')     # write a string
+            try:
+	            ser.write(b'abrir \n')     # write a string 
+            except serial.SerialException:
+	            print("Error al enviar comando al arduino!!!")
         elif request.form.get("boton2") == "cerrar":
             print("cerrar")
-            ser.write(b'cerrar \n')     # write a string
+            try:
+	            ser.write(b'cerrar \n')     # write a string 
+            except serial.SerialException:
+	            print("Error al enviar comando al arduino!!!")
         else:
             print("Comando incorrecto!")
             print(request.form.get("boton2"))
