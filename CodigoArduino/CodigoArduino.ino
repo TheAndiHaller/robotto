@@ -2,11 +2,23 @@ const int led = 8;
 const int led2 = 9;
 char c;
 char comando;
+int giro = 100;
+int velocidad = 150;
+#define pin_Enable_Mot_Der 2
+#define Mot_Der_Negativo 3
+#define Mot_Der_Positivo 4
+#define pin_Enable_Mot_Izq 5
+#define Mot_Izq_Negativo 6
+#define Mot_Izq_Positivo 7
 
 void setup() {
   Serial.begin(115200);
   pinMode(led, OUTPUT);
   pinMode(led2, OUTPUT);
+   pinMode(Mot_Der_Negativo, OUTPUT);
+  pinMode(Mot_Der_Positivo, OUTPUT);
+  pinMode(Mot_Izq_Negativo, OUTPUT);
+  pinMode(Mot_Izq_Positivo, OUTPUT);
 }
 void loop() {
   
@@ -21,52 +33,99 @@ void loop() {
 
     switch (comando) {
     case 'f': // si verde titila 2 veces es f
-      digitalWrite(led, HIGH);
-      delay(500);
-      digitalWrite(led, LOW);
-      delay(500);
-      digitalWrite(led, HIGH);
-      delay(500);
-      digitalWrite(led, LOW);
-      delay(500);
+      Adelante();
       break;
 
     case 'b': // si rojo titila 2 veces es b
-      digitalWrite(led2, HIGH);
-      delay(500);
-      digitalWrite(led2, LOW);
-      delay(500);
-      digitalWrite(led2, HIGH);
-      delay(500);
-      digitalWrite(led2, LOW);
-      delay(500);
-      break;
+     Reversa();
+     break;
 
     case 'l': // si rojo titila 1 vez es l
-      digitalWrite(led2, HIGH);
-      delay(500);
-      digitalWrite(led2, LOW);
-      delay(500);
-      break;
+    Izquierda();
+    break;
 
     case 'r': // si verde titila 1 ves es r
-      digitalWrite(led, HIGH);
-      delay(500);
-      digitalWrite(led, LOW);
-      delay(500);
+      Derecha();
       break;
 
     case 's': //devuelve los dos a la vez
-    digitalWrite(led, HIGH);
-    digitalWrite(led2, HIGH);
-    delay(1000);
-    digitalWrite(led, LOW);
-    digitalWrite(led2, LOW);
-    delay(1000);
+    Parar();
     comando = 'x';
     break;
+    
+default: 
+Parar();
+break;
+  }
+  
+}
+
+
+void Adelante(void)
+{
+
+  digitalWrite(Mot_Der_Positivo, HIGH);
+  digitalWrite(Mot_Der_Negativo, LOW);
+  digitalWrite(Mot_Izq_Positivo, HIGH);
+  digitalWrite(Mot_Izq_Negativo, LOW);
+  for (int i = 0; i < 255; i++)
+  {
+    analogWrite(pin_Enable_Mot_Der, i);
+    analogWrite(pin_Enable_Mot_Izq, i);
+    delay(100);
+  }
+
+}
+void Derecha(void)
+{
+  digitalWrite(Mot_Der_Positivo, LOW);
+  digitalWrite(Mot_Der_Negativo, HIGH);
+  digitalWrite(Mot_Izq_Positivo, HIGH);
+  digitalWrite(Mot_Izq_Negativo, LOW);
+
+  {
+    analogWrite(pin_Enable_Mot_Der, velocidad);
+    analogWrite(pin_Enable_Mot_Izq, velocidad);
+    delay(100);
   }
 }
+void Izquierda(void)
+{
+  digitalWrite(Mot_Der_Positivo, HIGH);
+  digitalWrite(Mot_Der_Negativo, LOW);
+  digitalWrite(Mot_Izq_Positivo, LOW);
+  digitalWrite(Mot_Izq_Negativo, HIGH);
+
+  {
+    analogWrite(pin_Enable_Mot_Der, velocidad);
+    analogWrite(pin_Enable_Mot_Izq, velocidad);
+    delay(100);
+  }
+}
+void Reversa(void)
+{
+  digitalWrite(Mot_Der_Positivo, LOW);
+  digitalWrite(Mot_Der_Negativo, HIGH);
+  digitalWrite(Mot_Izq_Positivo, LOW);
+  digitalWrite(Mot_Izq_Negativo, HIGH);
+
+  {
+    analogWrite(pin_Enable_Mot_Der, velocidad);
+    analogWrite(pin_Enable_Mot_Izq, velocidad);
+    delay(100);
+  }
+}
+void Parar(void)
+{
+  digitalWrite(Mot_Der_Positivo, LOW);
+  digitalWrite(Mot_Der_Negativo, LOW);
+  digitalWrite(Mot_Izq_Positivo, LOW);
+  digitalWrite(Mot_Izq_Negativo, LOW);
+}
+
+
+
+
 
 
 
