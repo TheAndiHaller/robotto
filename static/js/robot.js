@@ -1,6 +1,6 @@
 function cambiarPantalla(){
     document.getElementById("ojos").setAttribute("hidden","true");
-    document.getElementById("fondo").removeAttribute("hidden","true");
+    document.getElementById("fondo").removeAttribute("hidden","true");   
 }
 
 function botonAbrir() {
@@ -32,11 +32,30 @@ $(function(){
     var BUTTON_UP     = isTouchDevice ? "touchend"   : "mouseup";
                 
     $("button").bind(BUTTON_DOWN,function(){
-            $.post("/robot",
-            {boton2: this.id},
+            $.post("/control",
+            {boton: this.id},
             function(data,status){
               });
             });
     
 
     });
+    
+    function reqSensorData() {
+      setInterval(function(){ 
+        $.post("/control",
+        {boton: 't'},
+        function(data,status){
+          //console.log("Data: " + data + "\nStatus: " + status);
+
+          var tempindex = data.indexOf("temp:");
+          var humindex = data.indexOf("hum:");
+          var endindex = data.indexOf("\\r\\n");
+          var temp = data.substring(tempindex + 5, humindex - 1);
+          var hume = data.substring(humindex + 4, endindex);
+
+          document.getElementById("temp").innerHTML= "Temperatura: " + temp + " Humedad: " + hume;
+          });
+      
+      }, 5000);
+  }

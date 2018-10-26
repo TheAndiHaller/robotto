@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
-import serial, threading
+from flask import Flask, render_template, request, json
+import serial
+import io
 
 try:
-	ser = serial.Serial('COM4', 115200, timeout=0)   # Raspi '/dev/ttyACM0'   Windows 'COM4'
+	ser = serial.Serial('COM5', 115200, timeout=1)   # Raspi '/dev/ttyACM0'   Windows 'COM4'
 except IOError:
 	print("Error al abrir el puerto serial con el arduino. Verificar que el arduino este conectado a la raspi!!!")
 
@@ -58,6 +59,15 @@ def command():
 	            ser.write(b's \n')     # write a string 
             except Exception:
 	            print("Error al enviar comando al arduino!!!")
+        elif request.form.get("boton") == "t":
+            print("t")
+            try:
+	            ser.write(b't \n')     # write a string 
+            except Exception:
+	            print("Error al enviar comando al arduino!!!")
+            data = ser.readline()
+            print(data)
+            return json.dumps({'status':'OK','data':data.decode("utf-8")})
         else:   
             print("Comando incorrecto!")
             print(request.form.get("boton"))
