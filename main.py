@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
-import serial
+import serial, threading
+
 try:
-	ser = serial.Serial('/dev/ttyACM0', 115200, timeout=0)
+	ser = serial.Serial('COM4', 115200, timeout=0)   # Raspi '/dev/ttyACM0'   Windows 'COM4'
 except IOError:
-	print("Error al abrir el puerto serrial con el arduino. Verificar que el arduino este conectado a la raspi!!!")
+	print("Error al abrir el puerto serial con el arduino. Verificar que el arduino este conectado a la raspi!!!")
 
 app = Flask(__name__)
 
@@ -62,6 +63,7 @@ def command():
             print(request.form.get("boton"))
     return "OK"        
 
+
 @app.route('/robot', methods=['POST'])
 def commandrobot():
     if request.method == 'POST':       
@@ -83,7 +85,7 @@ def commandrobot():
     return "OK"   
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug = True)
 
 
 #127.0.0.1 (ip home)
